@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="./static/css/style.css"> -->
+    <title>YouTube Summarizer</title>
+</head>
+<!-- <style>
+    body{
+    background-color: #333;
+}
+</style> -->
+<body>
+    <h1 class="text-bold font-mono">YouTube Summarizer</h1>
+    <form action="/summarize" method="post">
+        <label for="video_url">Enter YouTube Video URL:</label>
+        <input type="text" id="video_url" name="video_url" required>
+        <button type="submit">Summarize</button>
+    </form>
+    
+    {% if video_info %}
+    <p>Title: {{ video_info.title }}</p>
+    {% endif %}
+    
+    {% if summary %}
+    <h3>Summary:</h3>
+    <p>{{ summary }}</p>
+    {% endif %}
+</body>
+</html>
